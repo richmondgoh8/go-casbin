@@ -19,6 +19,9 @@ go install github.com/golang/mock/mockgen@v1.6.0
 
 ```cgo
 make run
+
+generate token from the generate api
+the health endpoint can only be used for admin roles
 ```
 
 
