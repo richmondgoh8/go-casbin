@@ -4,12 +4,12 @@
 *.dll
 *.so
 *.dylib
-
+coverage.out
 # Test binary, built with `go test -c`
 *.test
-
+.idea
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-
+*.crt
 # Dependency directories (remove the comment below to include it)
 # vendor/

@@ -1,0 +1,13 @@
+# https://golangci-lint.run/usage/false-positives/
+linters-settings:
+  staticcheck:
+    checks:
+      - all
+      - '-SA1029'
+  gosimple:
+    checks:
+      - all
+      - '-S1040'
+linters:
+   disable:
+    - errcheck

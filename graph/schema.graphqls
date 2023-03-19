@@ -1,0 +1,40 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+# check whether endpoints required jwt token
+# example usage: health: HealthResponse @auth
+directive @auth on FIELD_DEFINITION
+
+# example usage: health: HealthResponse @hasRole(requestObj: USER requestAction: READ)
+directive @hasRole(requestObj: RequestObj! requestAction: RequestAction!) on FIELD_DEFINITION
+
+enum RequestObj {
+  USER
+}
+
+enum RequestAction {
+  READ
+}
+
+enum Roles {
+  ADMIN
+  MANAGER
+}
+
+input roleRequest {
+  role: Roles!
+}
+
+type HealthResponse {
+  message: String!
+}
+
+type TokenResponse {
+  accessToken: String!
+}
+
+type Query {
+  health: HealthResponse @auth @hasRole(requestObj: USER, requestAction: READ)
+  generateToken(input: roleRequest!): TokenResponse
+}
